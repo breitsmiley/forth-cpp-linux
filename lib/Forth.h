@@ -1,15 +1,26 @@
 #ifndef FORTH_CPP_LINUX_FORTH_H
 #define FORTH_CPP_LINUX_FORTH_H
 
-#include <iostream>
 #include <string>
+#include <sstream>
+#include <algorithm>
+#include <iostream>
 
-//    https://stackoverflow.com/questions/5167625/splitting-a-c-stdstring-using-tokens-e-g
-//    http://www.martinbroadhurst.com/how-to-split-a-string-in-c.html
 class Forth {
 
+private:
+    std::string inputStr = " ";
+    std::vector<std::string> inputStrParts = {};
+
 public:
-    std::string calculate(std::string input);
+    std::string calculate(const std::string & input);
+
+private:
+    void init();
+
+    template <class Container>
+    void splitStr(const std::string& str, Container& container, char delimiter = ' ');
+
 };
 
 
