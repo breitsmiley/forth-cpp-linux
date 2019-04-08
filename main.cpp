@@ -1,16 +1,19 @@
 #include <iostream>
 #include <string>
-#include "lib/Forth.h"
+#include "lib/Forth/ForthEvaluator.h"
 
 int main() {
     using namespace std;
+    using namespace Forth;
+
+
     string input;
     string output;
 
     // turn on throw exceptions if fail
     cin.exceptions(ios_base::failbit);
 
-    auto forthEvaluator = new Forth();
+    auto forthEvaluator = new ForthEvaluator();
 
     try {
         while (
